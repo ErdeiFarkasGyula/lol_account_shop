@@ -1,0 +1,210 @@
+@font-face {
+    font-family: lolFont;
+    src: url(fonts/BeaufortforLOL-Regular.ttf);
+}
+
+@font-face {
+    font-family: lolFontBold;
+    src: url(fonts/BeaufortforLOL-Bold.ttf);
+}
+
+hr {
+    width: 80%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lolFont, sans-serif;
+    color: #F0E6D2;
+    text-align: center;
+}
+
+main {
+    margin-top: 75px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    background-image: linear-gradient(#091428, #0A1428);
+    background-attachment: fixed;
+}
+
+header {
+    position: fixed;
+    background-color: #091428;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: lolFontBold, sans-serif;
+    font-size: 48px;
+    color: #C89B3C;
+}
+
+hr {
+    width: 90%;
+}
+
+#accountHolder {
+    margin-left: 25%;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#szuro {
+    max-width: 400px;
+    min-width: 400px;
+    height: 88%;
+    width: 400px;
+    position: fixed;
+    background-color: #0397AB;
+    font-size: 130%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#szuro > hr {
+    margin: 10px 0;
+}
+
+#szuro > label {
+    margin: 5px 0;
+}
+
+#szuro > input {
+    font-size: 110%;
+    color: #005A82;
+    margin: 5px 0;
+    width: 80%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#szuro > select {
+    min-height: 70px;
+    font-size: 90%;
+    margin: 5px 0;
+    width: 80%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#szuro > select > option {
+    border-radius: 10px;
+    font-size: 100%;
+    color: #005A82;
+}
+
+#szuro > select > option:hover {
+    background-color: #005A82;
+    color: #F0E6D2;
+}
+
+#szuro > button {
+    background-color: #005A82;
+    color: #F0E6D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin-top: 10px;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+#szuro > button:hover {
+    background-color: #F0E6D2;
+    color: #005A82;
+}
+
+.account {
+    width: 350px;
+    max-width: 350px;
+    min-width: 350px;
+    font-family: lolFontBold, sans-serif;
+    background-color: #0397AB;
+    width: 22%;
+    height: 450px;
+    text-align: center;
+    margin: 20px 50px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account > img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: #005A82 0px 0px 10px 5px;
+}
+
+.accountText {
+    margin-top: 5px;
+    font-size: 140%;
+    font-family: lolFont, sans-serif;
+    text-shadow: #005A82 0px 0px 10px 5px;
+}
+
+.skins {
+    margin-top: 10px;
+}
+
+.skins img{
+   width: 20px; 
+}
+
+.accountPrice {
+    margin: 0;
+}
+
+.purchaseButton {
+    position: relative;
+    bottom: 0;
+    background-color: #005A82;
+    color: #F0E6D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 120%;
+    cursor: pointer;
+    
+}
+
+.purchaseButton:hover {
+    background-color: #F0E6D2;
+    color: #005A82;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
