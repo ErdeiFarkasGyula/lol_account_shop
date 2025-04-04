@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="shop.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
     <title>LoL Fiókok</title>
 </head>
@@ -14,46 +16,50 @@
         <h1>LoL Fiókok</h1>
     </header>
     <main>
-        <div id="szuro">
-            <h3>Szűrő</h3>
-            <hr>
-            <label for="usernameSearch">Felhasználónév</label>
-            <input type="text" id="usernameSearch" placeholder="Felhasználónév...">
-            <label for="ranks">Rangok</label>
-            <select name="ranks" id="rankSearch" multiple>
-                <option value="IRON">Iron</option>
-                <option value="BRONZE">Bronze</option>
-                <option value="SILVER">Silver</option>
-                <option value="GOLD">Gold</option>
-                <option value="PLATINUM">Platinum</option>
-                <option value="EMERALD">Emerald</option>
-                <option value="DIAMOND">Diamond</option>
-                <option value="MASTER">Master</option>
-                <option value="GRANDMASTER">Grandmaster</option>
-                <option value="CHALLENGER">Challenger</option>
-            </select>
-            <label for="minLevelSearch">Minimum Szint</label>
-            <input type="number" id="minLevelSearch" placeholder="Minimum Szint...">
-            <label for="maxLevelSearch">Maximum Szint</label>
-            <input type="number" id="maxLevelSearch" placeholder="Maximum Szint...">
-            <label for="serverSearch">Szerverek:</label>
-            <select name="servers" id="serverSearch" multiple>
-                <option value="EUW">EUW</option>
-                <option value="EUNE">EUNE</option>
-                <option value="KR">KR</option>
-                <option value="TR">TR</option>
-                <option value="BR">BR</option>
-            </select>
-            <label for="minPriceSearch">Minimum Ár</label>
-            <input type="number" id="minPriceSearch" step="100">
-            <label for="maxPriceSearch">Maximum Ár</label>
-            <input type="number" id="maxPricelSearch" step="100">
-            <button id="searchButton">Keresés...</button>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="szuro" class="col-3">
+                    <h3>Szűrő</h3>
+                    <hr>
+                    <label for="usernameSearch">Felhasználónév</label>
+                    <input type="text" id="usernameSearch" placeholder="Felhasználónév...">
+                    <label for="ranks">Rangok</label>
+                    <select name="ranks" id="rankSearch" multiple>
+                        <option value="IRON">Iron</option>
+                        <option value="BRONZE">Bronze</option>
+                        <option value="SILVER">Silver</option>
+                        <option value="GOLD">Gold</option>
+                        <option value="PLATINUM">Platinum</option>
+                        <option value="EMERALD">Emerald</option>
+                        <option value="DIAMOND">Diamond</option>
+                        <option value="MASTER">Master</option>
+                        <option value="GRANDMASTER">Grandmaster</option>
+                        <option value="CHALLENGER">Challenger</option>
+                    </select>
+                    <label for="minLevelSearch">Minimum Szint</label>
+                    <input type="number" id="minLevelSearch" placeholder="Minimum Szint...">
+                    <label for="maxLevelSearch">Maximum Szint</label>
+                    <input type="number" id="maxLevelSearch" placeholder="Maximum Szint...">
+                    <label for="serverSearch">Szerverek:</label>
+                    <select name="servers" id="serverSearch" multiple>
+                        <option value="EUW">EUW</option>
+                        <option value="EUNE">EUNE</option>
+                        <option value="KR">KR</option>
+                        <option value="TR">TR</option>
+                        <option value="BR">BR</option>
+                    </select>
+                    <label for="minPriceSearch">Minimum Ár</label>
+                    <input type="number" id="minPriceSearch" step="100" placeholder="Minimum Ár...">
+                    <label for="maxPriceSearch">Maximum Ár</label>
+                    <input type="number" id="maxPriceSearch" step="100" placeholder="Maximum Ár...">
+                    <button id="searchButton">Keresés</button> 
+                    <button id="clearButton">Törlés</button>
+                </div>
+                <div id="accountHolder" class="col-9">
+                    
+                </div>
+            </div>
         </div>
-        <div id="accountHolder">
-
-        </div>
-
     </main>
     <footer>
         <p>&copy; 2025 LoL Fiókok. Minden jog fenntartva. :3</p>
@@ -65,5 +71,4 @@
         </nav>
     </footer>
 </body>
-
 </html>

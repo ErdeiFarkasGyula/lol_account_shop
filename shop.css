@@ -8,10 +8,6 @@
     src: url(fonts/BeaufortforLOL-Bold.ttf);
 }
 
-hr {
-    width: 80%;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +15,6 @@ hr {
     font-family: lolFont, sans-serif;
     color: #F0E6D2;
     text-align: center;
-}
-
-main {
-    margin-top: 75px;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    flex-direction: row;
 }
 
 body {
@@ -52,13 +40,9 @@ h1 {
     color: #C89B3C;
 }
 
-hr {
-    width: 90%;
-}
-
 #accountHolder {
-    margin-left: 25%;
-    margin-top: 75px;
+    margin-left: 550px;
+    margin-top: 90px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -66,18 +50,16 @@ hr {
 }
 
 #szuro {
+    position: fixed;
     max-width: 400px;
     min-width: 400px;
-    height: 88%;
     width: 400px;
-    position: fixed;
+    height: 1100px;
     background-color: #0397AB;
     font-size: 130%;
     padding: 10px;
     border-radius: 10px;
-    margin: 15px;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +72,14 @@ hr {
 
 #szuro > label {
     margin: 5px 0;
+    font-size: 120%;
+    font-family: lolFontBold, sans-serif;
+}
+
+#szuro > h3 {
+    margin: 5px 0;
+    font-size: 180%;
+    font-family: lolFontBold, sans-serif;
 }
 
 #szuro > input {
@@ -124,6 +114,7 @@ hr {
 }
 
 #szuro > button {
+    width: 150px;
     background-color: #005A82;
     color: #F0E6D2;
     border: none;
@@ -137,7 +128,7 @@ hr {
 #szuro > button:hover {
     background-color: #F0E6D2;
     color: #005A82;
-}
+} 
 
 .account {
     width: 350px;
@@ -145,16 +136,26 @@ hr {
     min-width: 350px;
     font-family: lolFontBold, sans-serif;
     background-color: #0397AB;
-    width: 22%;
-    height: 450px;
+    height: 470px;
     text-align: center;
-    margin: 20px 50px;
+    margin: 15px;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.account:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    box-shadow: #005A82 0px 0px 10px 5px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
 }
 
 .account > img {
@@ -199,6 +200,7 @@ hr {
 .purchaseButton:hover {
     background-color: #F0E6D2;
     color: #005A82;
+    transition: all 0.1s ease-in-out;
 }
 
 footer {
