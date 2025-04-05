@@ -13,47 +13,154 @@
 
 <body>
     <header>
-        <h1>LoL Fiókok</h1>
+        <div style="display: flex;">
+            <img src="images/LoL-Symbol.png" alt="LoL-Symbol" class="logo">
+            <h1>LoL Fiókok</h1>
+        </div>
+        <nav class="navigation">
+            <button><a href="index.html">Főoldal</a></button>
+            <button><a href="shop.html">Bolt</a></button>
+            <button><a href="calculator.html">Kalkulátor</a></button>
+            <button><a href="about.html">Rólunk</a></button>
+            <button><a href="contact.html">Kapcsolat</a></button>
+        </nav>
     </header>
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div id="szuro" class="col-3">
+                <div id="szuro" class="col-2">
                     <h3>Szűrő</h3>
+
                     <hr>
-                    <label for="usernameSearch">Felhasználónév</label>
-                    <input type="text" id="usernameSearch" placeholder="Felhasználónév...">
-                    <label for="ranks">Rangok</label>
-                    <select name="ranks" id="rankSearch" multiple>
-                        <option value="IRON">Iron</option>
-                        <option value="BRONZE">Bronze</option>
-                        <option value="SILVER">Silver</option>
-                        <option value="GOLD">Gold</option>
-                        <option value="PLATINUM">Platinum</option>
-                        <option value="EMERALD">Emerald</option>
-                        <option value="DIAMOND">Diamond</option>
-                        <option value="MASTER">Master</option>
-                        <option value="GRANDMASTER">Grandmaster</option>
-                        <option value="CHALLENGER">Challenger</option>
-                    </select>
-                    <label for="minLevelSearch">Minimum Szint</label>
-                    <input type="number" id="minLevelSearch" placeholder="Minimum Szint...">
-                    <label for="maxLevelSearch">Maximum Szint</label>
-                    <input type="number" id="maxLevelSearch" placeholder="Maximum Szint...">
-                    <label for="serverSearch">Szerverek:</label>
-                    <select name="servers" id="serverSearch" multiple>
-                        <option value="EUW">EUW</option>
-                        <option value="EUNE">EUNE</option>
-                        <option value="KR">KR</option>
-                        <option value="TR">TR</option>
-                        <option value="BR">BR</option>
-                    </select>
-                    <label for="minPriceSearch">Minimum Ár</label>
-                    <input type="number" id="minPriceSearch" step="100" placeholder="Minimum Ár...">
-                    <label for="maxPriceSearch">Maximum Ár</label>
-                    <input type="number" id="maxPriceSearch" step="100" placeholder="Maximum Ár...">
-                    <button id="searchButton">Keresés</button> 
-                    <button id="clearButton">Törlés</button>
+
+                    <div class="szuroContent">
+                        <label for="usernameSearch">Felhasználónév</label>
+                        <input type="text" id="usernameSearch" placeholder="Felhasználónév...">
+                        <label for="ranks">Rangok</label>
+                        <select name="ranks" id="rankSearch" multiple>
+                            <option value="IRON">Iron</option>
+                            <option value="BRONZE">Bronze</option>
+                            <option value="SILVER">Silver</option>
+                            <option value="GOLD">Gold</option>
+                            <option value="PLATINUM">Platinum</option>
+                            <option value="EMERALD">Emerald</option>
+                            <option value="DIAMOND">Diamond</option>
+                            <option value="MASTER">Master</option>
+                            <option value="GRANDMASTER">Grandmaster</option>
+                            <option value="CHALLENGER">Challenger</option>
+                        </select>
+                        <label for="minLevelSearch">Minimum Szint</label>
+                        <input type="number" id="minLevelSearch" placeholder="Minimum Szint...">
+                        <label for="maxLevelSearch">Maximum Szint</label>
+                        <input type="number" id="maxLevelSearch" placeholder="Maximum Szint...">
+                        <label for="serverSearch">Szerverek:</label>
+                        <select name="servers" id="serverSearch" multiple>
+                            <option value="EUW">EUW</option>
+                            <option value="EUNE">EUNE</option>
+                            <option value="KR">KR</option>
+                            <option value="TR">TR</option>
+                            <option value="BR">BR</option>
+                            <option value="LAN">LAN</option>
+                            <option value="LAS">LAS</option>
+                            <option value="NA">NA</option>
+                            <option value="OCE">OCE</option>
+                            <option value="RU">RU</option>
+                            <option value="JP">JP</option>
+                            <option value="PH">PH</option>
+                        </select>
+
+                        <hr>
+
+                        <label style="font-size: 150%;">Hőskinézetek</label>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Standard_Skin.png" alt="Standard Skin">
+                                Standard
+                                <img src="images/skinTiers/Standard_Skin.png" alt="Standard Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minStandardSkins" placeholder="Min">
+                                <input type="number" id="maxStandardSkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Epic_Skin.png" alt="Epic Skin">
+                                Epic
+                                <img src="images/skinTiers/Epic_Skin.png" alt="Epic Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minEpicSkins" placeholder="Min">
+                                <input type="number" id="maxEpicSkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Legendary_Skin.png" alt="Legendary Skin">
+                                Legendary
+                                <img src="images/skinTiers/Legendary_Skin.png" alt="Legendary Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minLegendarySkins" placeholder="Min">
+                                <input type="number" id="maxLegendarySkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Mythic_Skin.png" alt="Mythic Skin">
+                                Mythic
+                                <img src="images/skinTiers/Mythic_Skin.png" alt="Mythic Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minMythicSkins" placeholder="Min">
+                                <input type="number" id="maxMythicSkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Ultimate_Skin.png" alt="Ultimate Skin">
+                                Ultimate
+                                <img src="images/skinTiers/Ultimate_Skin.png" alt="Ultimate Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minUltimateSkins" placeholder="Min">
+                                <input type="number" id="maxUltimateSkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Exalted_Skin.png" alt="Exalted Skin">
+                                Exalted
+                                <img src="images/skinTiers/Exalted_Skin.png" alt="Exalted Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minExaltedSkins" placeholder="Min">
+                                <input type="number" id="maxExaltedSkins" placeholder="Max">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="skinTierContainer">
+                                <img src="images/skinTiers/Transcendent_Skin.png" alt="Transcendent Skin">
+                                Transcendent
+                                <img src="images/skinTiers/Transcendent_Skin.png" alt="Transcendent Skin">
+                            </div>
+                            <div class="skinSearchContainer">
+                                <input type="number" id="minTranscendentSkins" placeholder="Min">
+                                <input type="number" id="maxTranscendentSkins" placeholder="Max">
+                            </div>
+                        </div>
+
+                        <hr>
+                    
+                        <label for="minPriceSearch">Minimum Ár</label>
+                        <input type="number" id="minPriceSearch" step="100" placeholder="Minimum Ár...">
+                        <label for="maxPriceSearch">Maximum Ár</label>
+                        <input type="number" id="maxPriceSearch" step="100" placeholder="Maximum Ár...">
+                    </div>
+                    <div class="buttonContainer">
+                        <button id="searchButton">Keresés</button> 
+                        <button id="clearButton">Törlés</button>
+                    </div>
                 </div>
                 <div id="accountHolder" class="col-9">
                     
@@ -63,12 +170,6 @@
     </main>
     <footer>
         <p>&copy; 2025 LoL Fiókok. Minden jog fenntartva. :3</p>
-        <nav>
-            <a href="index.html">Főoldal</a>
-            <a href="shop.html">Bolt</a>
-            <a href="about.html">Rólunk</a>
-            <a href="contact.html">Kapcsolat</a>
-        </nav>
     </footer>
 </body>
 </html>

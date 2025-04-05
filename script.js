@@ -131,7 +131,7 @@ function loadFilteredAccounts(_accounts) {
                 </div>
             </div>
             <div class="accountText accountPrice">
-                <p class="price"><strong>Ár:</strong>  ${account.price} Ft</p>
+                <p class="price"><strong>Ár:</strong>  ${calculateAccountPrice(account)} Ft</p>
             </div>
             <button class="purchaseButton" onClick="purchaseAccount(${account.username});">Vásárlás</button>
         </div>
@@ -142,46 +142,100 @@ function loadFilteredAccounts(_accounts) {
     accountsContainer.innerHTML += formated.join("");
 }
 
+function calculateAccountPrice(account) {
+    let price = 2000;
+    price += account.level * 100; // 100 Ft per level
+    price += account.skins[0] * 200;
+    price += account.skins[1] * 500; // Epic Skin
+    price += account.skins[2] * 1000; // Legendary Skin
+    price += account.skins[3] * 2000; // Mythic Skin
+    price += account.skins[4] * 5000; // Ultimate Skin
+    price += account.skins[5] * 25000; // Exalted Skin
+    price += account.skins[6] * 80000; // Transcendent Skin
+    price += account.rank.split(" ")[0] === "CHALLENGER" ? 10000 : 0; // Challenger rank bonus
+    price += account.rank.split(" ")[0] === "GRANDMASTER" ? 5000 : 0; // Grandmaster rank bonus
+    price += account.rank.split(" ")[0] === "MASTER" ? 2000 : 0; // Master rank bonus
+    price += account.rank.split(" ")[0] === "DIAMOND" ? 1000 : 0; // Diamond rank bonus
+    price += account.rank.split(" ")[0] === "DIAMOND" ? 500 : 0; // Diamond rank bonus
+    price += account.rank.split(" ")[0] === "EMERALD" ? 300 : 0; // Emerald rank bonus
+    price += account.rank.split(" ")[0] === "PLATINUM" ? 500 : 0; // Platinum rank bonus
+    price += account.rank.split(" ")[0] === "GOLD" ? 200 : 0; // Gold rank bonus
+    price += account.rank.split(" ")[0] === "SILVER" ? 100 : 0; // Silver rank bonus
+    price += account.rank.split(" ")[0] === "BRONZE" ? 50 : 0; // Bronze rank bonus
+    price += account.rank.split(" ")[0] === "IRON" ? 25 : 0; // Iron rank bonus
+    price += account.rank === "IRON IV" ? 5000 : 0; // Unranked rank bonus
+    
+    
+    return price;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadFilteredAccounts(accounts);
     const searchButton = document.getElementById('searchButton');
     const clearButton = document.getElementById('clearButton');
 
     clearButton.addEventListener('click', () => { 
+        document.querySelectorAll('input[type="text"], input[type="number"], select').forEach(input => {
+            if (input.type === 'text' || input.type === 'number') {
+                input.value = '';
+            } else if (input.type === 'select-multiple') {
+                Array.from(input.options).forEach(option => option.selected = false);
+            }
+        });
         loadFilteredAccounts(accounts);
     });
 
     searchButton.addEventListener('click', () => {
         const usernameInput = document.getElementById('usernameSearch').value.toLowerCase();
         const rank = document.getElementById('rankSearch');
-        const minLevel = document.getElementById('minLevelSearch');
-        const maxLevel = document.getElementById('maxLevelSearch');
+        const minLevel = document.getElementById('minLevelSearch').value;
+        const maxLevel = document.getElementById('maxLevelSearch').value;
         const server = document.getElementById('serverSearch');
         const minPrice = document.getElementById('minPriceSearch');
         const maxPrice = document.getElementById('maxPriceSearch');
 
+        const minStandardSkins = document.getElementById('minStandardSkins').value;
+        const maxStandardSkins = document.getElementById('maxStandardSkins').value;
+        const minEpicSkins = document.getElementById('minEpicSkins').value;
+        const maxEpicSkins = document.getElementById('maxEpicSkins').value;
+        const minLegendarySkins = document.getElementById('minLegendarySkins').value;
+        const maxLegendarySkins = document.getElementById('maxLegendarySkins').value;
+        const minMythicSkins = document.getElementById('minMythicSkins').value;
+        const maxMythicSkins = document.getElementById('maxMythicSkins').value;
+        const minUltimateSkins = document.getElementById('minUltimateSkins').value;
+        const maxUltimateSkins = document.getElementById('maxUltimateSkins').value;
+        const minExaltedSkins = document.getElementById('minExaltedSkins').value;
+        const maxExaltedSkins = document.getElementById('maxExaltedSkins').value;
+        const minTranscendentSkins = document.getElementById('minTranscendentSkins').value;
+        const maxTranscendentSkins = document.getElementById('maxTranscendentSkins').value;
+
         let selectedRanks = Array.from(rank.selectedOptions).map(option => option.value);
         let selectedServers = Array.from(server.selectedOptions).map(option => option.value);
 
-        var filteredAccounts = accounts.filter(account =>
-            account.username.toLowerCase().includes(usernameInput)
-        );
+        var filteredAccounts = accounts;
 
+        if (usernameInput != "") {
+            filteredAccounts = accounts.filter(account =>
+                account.username.toLowerCase().includes(usernameInput)
+            );
+        }
+
+        console.log(selectedRanks);
         if (selectedRanks.length > 0) {
             filteredAccounts = filteredAccounts.filter(account =>
-                selectedRanks.includes(account.rank)
+                selectedRanks.includes(account.rank.split(" ")[0])
+            );
+        }
+        
+        if (minLevel != "") {
+            filteredAccounts = filteredAccounts.filter(account =>
+                account.level >= parseInt(minLevel)
             );
         }
 
-        if (minLevel.value != "") {
+        if (maxLevel != "") {
             filteredAccounts = filteredAccounts.filter(account =>
-                account.level >= parseInt(minLevel.value)
-            );
-        }
-
-        if (maxLevel.value != "") {
-            filteredAccounts = filteredAccounts.filter(account =>
-                account.level >= parseInt(maxLevel.value)
+                account.level <= parseInt(maxLevel)
             );
         }
 
@@ -200,6 +254,92 @@ document.addEventListener('DOMContentLoaded', () => {
         if (maxPrice.value != "") {
             filteredAccounts = filteredAccounts.filter(account =>
                 account.price <= parseInt(maxPrice.value)
+            );
+        }
+
+        //SKINS
+
+        if (minStandardSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[0] >= parseInt(minStandardSkins)
+            );
+        }
+
+        if (maxStandardSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[0] <= parseInt(maxStandardSkins)
+            );
+        }
+
+        if (minEpicSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[1] >= parseInt(minEpicSkins)
+            );
+        }
+
+        if (maxEpicSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[1] <= parseInt(maxEpicSkins)
+            );
+        }
+
+        if (minLegendarySkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[2] >= parseInt(minLegendarySkins)
+            );
+        }
+
+        if (maxLegendarySkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[2] <= parseInt(maxLegendarySkins)
+            );
+        }
+
+        if (minMythicSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[3] >= parseInt(minMythicSkins)
+            );
+        }
+
+        if (maxMythicSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[3] <= parseInt(maxMythicSkins)
+            );
+        }
+
+        if (minUltimateSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[4] >= parseInt(minUltimateSkins)
+            );
+        }
+
+        if (maxUltimateSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[4] <= parseInt(maxUltimateSkins)
+            );
+        }
+
+        if (minExaltedSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[5] >= parseInt(minExaltedSkins)
+            );
+        }
+
+        if (maxExaltedSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[5] <= parseInt(maxExaltedSkins)
+            );
+        }
+
+        if (minTranscendentSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[6] >= parseInt(minTranscendentSkins)
+            );
+        }
+
+        if (maxTranscendentSkins) {
+            filteredAccounts = filteredAccounts.filter(account =>
+            account.skins[6] <= parseInt(maxTranscendentSkins)
             );
         }
 

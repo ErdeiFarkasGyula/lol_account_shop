@@ -25,12 +25,66 @@ body {
     background-attachment: fixed;
 }
 
+main {
+    margin-top: 15px;
+}
+
 header {
+    padding-top: 10px;
     position: fixed;
     background-color: #091428;
     top: 0;
     width: 100%;
-    padding: 15px 0;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    padding: 35px 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 140%;
+    font-family: lolFontBold, sans-serif;
+}
+
+nav button {
+    background-color: #0397AB;
+    color: #F0E6D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #C89B3C;
+    color: #005A82;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation a {
+    color: #F0E6D2;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
 h1 {
@@ -51,38 +105,47 @@ h1 {
 
 #szuro {
     position: fixed;
-    max-width: 400px;
-    min-width: 400px;
-    width: 400px;
-    height: 1100px;
+    max-width: 450px;
+    min-width: 450px;
+    width: 450px;
+    height: 85%;
     background-color: #0397AB;
     font-size: 130%;
     padding: 10px;
     border-radius: 10px;
-    margin: 100px;
+    margin: 85px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-#szuro > hr {
+.szuroContent {
+    overflow: auto;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#szuro hr {
     margin: 10px 0;
 }
 
-#szuro > label {
-    margin: 5px 0;
+#szuro label {
     font-size: 120%;
     font-family: lolFontBold, sans-serif;
 }
 
-#szuro > h3 {
-    margin: 5px 0;
+#szuro h3 {
     font-size: 180%;
     font-family: lolFontBold, sans-serif;
 }
 
-#szuro > input {
+#szuro > div > input {
     font-size: 110%;
     color: #005A82;
     margin: 5px 0;
@@ -92,7 +155,33 @@ h1 {
     border: none;
 }
 
-#szuro > select {
+.skinSearchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.skinSearchContainer > input {
+    font-size: 110%;
+    color: #005A82;
+    margin: 5px 0;
+    width: 40%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.skinTierContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: larger;
+    font-family: lolFontBold, sans-serif;
+}
+
+#szuro select {
     min-height: 70px;
     font-size: 90%;
     margin: 5px 0;
@@ -102,18 +191,18 @@ h1 {
     border: none;
 }
 
-#szuro > select > option {
+#szuro select option {
     border-radius: 10px;
     font-size: 100%;
     color: #005A82;
 }
 
-#szuro > select > option:hover {
+#szuro select option:hover {
     background-color: #005A82;
     color: #F0E6D2;
 }
 
-#szuro > button {
+#szuro button {
     width: 150px;
     background-color: #005A82;
     color: #F0E6D2;
@@ -125,7 +214,7 @@ h1 {
     cursor: pointer;
 }
 
-#szuro > button:hover {
+#szuro button:hover {
     background-color: #F0E6D2;
     color: #005A82;
 } 
