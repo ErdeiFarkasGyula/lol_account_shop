@@ -94,7 +94,7 @@ h1 {
 }
 
 #accountHolder {
-    margin-left: 550px;
+    margin-left: 28%;
     margin-top: 90px;
     display: flex;
     justify-content: center;
@@ -106,8 +106,8 @@ h1 {
     text-align: center;
     position: fixed;
     max-width: 450px;
-    min-width: 450px;
-    width: 450px;
+    min-width: 400px;
+    width: 20%;
     height: 85%;
     background-color: #0397AB;
     font-size: 130%;
@@ -166,7 +166,7 @@ h1 {
     font-size: 110%;
     color: #005A82;
     margin: 5px 0;
-    width: 40%;
+    width: 38.5%;
     padding: 5px;
     border-radius: 10px;
     border: none;
@@ -221,9 +221,9 @@ h1 {
 } 
 
 .account {
-    width: 350px;
-    max-width: 350px;
-    min-width: 350px;
+    width: 370px;
+    max-width: 370px;
+    min-width: 370px;
     font-family: lolFontBold, sans-serif;
     background-color: #0397AB;
     height: 470px;
@@ -256,6 +256,7 @@ p {
 }
 
 .accountText {
+    width: 95%;
     margin-top: 5px;
     font-size: 140%;
     font-family: lolFont, sans-serif;
@@ -263,6 +264,7 @@ p {
 }
 
 .skins {
+    text-align: center;
     margin-top: 10px;
 }
 
@@ -271,6 +273,7 @@ p {
 }
 
 .accountPrice {
+    text-align: center;
     margin: 0;
     font-size: 150%;
     font-family: lolFontBold, sans-serif;
