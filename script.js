@@ -117,9 +117,9 @@ function loadFilteredAccounts(_accounts) {
             <img src="images/splashArts/${account.splash}.jpg" alt="${account.splash}" class="account-image">
             <div class="accountText">
                 <p><strong>Felhasználónév:</strong> ${account.username}</p>
+                <p><strong>Szerver:</strong> ${account.server}</p>
                 <p><strong>Rang:</strong> ${account.rank}</p>
                 <p><strong>Szint:</strong> ${account.level}</p>
-                <p><strong>Szerver:</strong> ${account.server}</p>
                 <div class="skins">
                     <img src="images/skinTiers/Standard_Skin.png" alt="Standard_Skin" class="skinTier"> ${account.skins[0]}
                     <img src="images/skinTiers/Epic_Skin.png" alt="Epic_Skin" class="skinTier"> ${account.skins[1]}
@@ -144,7 +144,7 @@ function loadFilteredAccounts(_accounts) {
 
 function calculateAccountPrice(account) {
     let price = 2000;
-    price += account.level * 100; // 100 Ft per level
+    price += account.level * 50; // 100 Ft per level
     price += account.skins[0] * 200;
     price += account.skins[1] * 500; // Epic Skin
     price += account.skins[2] * 1000; // Legendary Skin
@@ -165,7 +165,9 @@ function calculateAccountPrice(account) {
     price += account.rank.split(" ")[0] === "IRON" ? 25 : 0; // Iron rank bonus
     price += account.rank === "IRON IV" ? 5000 : 0; // Unranked rank bonus
     
-    
+    price += account.username.includes("Feet") ? 10000 : 0; // Feet bonus
+    price += account.username.includes("Kebab") ? 5000 : 0; // Kebab bonus
+
     return price;
 }
 
