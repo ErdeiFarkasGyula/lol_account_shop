@@ -1,0 +1,98 @@
+@font-face {
+    font-family: lolFont;
+    src: url(fonts/BeaufortforLOL-Regular.ttf);
+}
+
+@font-face {
+    font-family: lolFontBold;
+    src: url(fonts/BeaufortforLOL-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lolFont, sans-serif;
+    color: #F0E6D2;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    background-image: linear-gradient(#091428, #0A1428);
+    background-attachment: fixed;
+}
+
+header {
+    padding-top: 10px;
+    position: fixed;
+    background-color: #091428;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    padding: 35px 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 140%;
+    font-family: lolFontBold, sans-serif;
+}
+
+nav button {
+    background-color: #0397AB;
+    color: #F0E6D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #C89B3C;
+    color: #005A82;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation a {
+    color: #F0E6D2;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-family: lolFontBold, sans-serif;
+    font-size: 48px;
+    color: #C89B3C;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+

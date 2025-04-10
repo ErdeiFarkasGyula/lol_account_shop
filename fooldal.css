@@ -1,0 +1,80 @@
+@font-face {
+    font-family: lolFont;
+    src: url(fonts/BeaufortforLOL-Regular.ttf);
+}
+
+@font-face {
+    font-family: lolFontBold;
+    src: url(fonts/BeaufortforLOL-Bold.ttf);
+}
+
+main img {
+    width: 100px;
+    height: 100px;
+}
+
+body {
+    font-family: lolFontBold, sans-serif;
+    color: #fff;
+    background-image: linear-gradient(#091428, #0A1428);
+    background-attachment: fixed;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+main > p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px #000;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    background: #104e8b;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: #0397AB;
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.top-accounts {
+    margin: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.Teemo-easteregg {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: popUp 1s ease-in-out;
+}
+
+@keyframes popUp {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px #000;
+}
+
