@@ -24,12 +24,63 @@
         </nav>
     </header>
 
+    <main>
+        <div>
+
+        </div>
+        <h1>Számold ki a fiókod értékét!</h1>
+        <div id="szuro">
+            <input type="text" id="name" placeholder="Idéző neve">
+            <input type="number" id="level" placeholder="Szint">
+            <input type="number" id="standard" placeholder="Standard Kinézetek">
+            <input type="number" id="epic" placeholder="Epic Kinézetek">
+            <input type="number" id="legendary" placeholder="Legendary Kinézetek">
+            <input type="number" id="mythic" placeholder="Mythic Kinézetek">
+            <input type="number" id="ultimate" placeholder="Ultimate Kinézetek">
+            <input type="number" id="exalted" placeholder="Exalted Kinézetek">
+            <input type="number" id="trancendent" placeholder="Trancendent Kinézetek">
+            <select id="server">
+                <option disabled selected>Szerver</option>
+                <option value="EUW">EUW</option>
+                <option value="EUNE">EUNE</option>
+                <option value="KR">KR</option>
+                <option value="TR">TR</option>
+                <option value="BR">BR</option>
+                <option value="LAN">LAN</option>
+                <option value="LAS">LAS</option>
+                <option value="NA">NA</option>
+                <option value="OCE">OCE</option>
+                <option value="RU">RU</option>
+                <option value="JP">JP</option>
+                <option value="PH">PH</option>
+            </select>
+            <select id="rank">
+                <option disabled selected>Rang</option>
+                <option value="IRON">Iron</option>
+                <option value="BRONZE">Bronze</option>
+                <option value="SILVER">Silver</option>
+                <option value="GOLD">Gold</option>
+                <option value="PLATINUM">Platinum</option>
+                <option value="EMERALD">Emerald</option>
+                <option value="DIAMOND">Diamond</option>
+                <option value="MASTER">Master</option>
+                <option value="GRANDMASTER">Grandmaster</option>
+                <option value="CHALLENGER">Challenger</option>
+            </select>
+            <button id="calc">Kalkulálás</button>
+            <p>Fiókod értéke: <span id="price"></span> Ft</p>
+        </div>
+    </main>
+
     <footer>
         <p>
             Nincs garancia a vásárlásra!<br>
             0% garancia a visszatérítésre!<br>
         </p>
     </footer>
+
+    <script src="calc.js"></script>
+
 </body>
 
 </html>

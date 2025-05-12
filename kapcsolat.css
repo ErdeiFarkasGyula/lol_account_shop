@@ -7,3 +7,12 @@
 body {
     text-align: center;
 }
+
+main {
+    font-size: larger;
+    margin-top: 5%;
+}
+
+main h1 {
+    font-size: 150%;
+}

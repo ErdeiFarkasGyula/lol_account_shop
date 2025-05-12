@@ -1,3 +1,110 @@
+@font-face {
+    font-family: lolFont;
+    src: url(fonts/BeaufortforLOL-Regular.ttf);
+}
+
+@font-face {
+    font-family: lolFontBold;
+    src: url(fonts/BeaufortforLOL-Bold.ttf);
+}
+
 body {
     text-align: center;
+    color: aliceblue;
+    font-family: lolFont, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+main h1 {
+    font-size: 300%;
+    margin-top: 100px;
+    padding: 0;
+}
+
+#szuro {
+    text-align: center;
+    max-width: 450px;
+    min-width: 400px;
+    width: 20%;
+    height: 85%;
+    background-color: #0397AB;
+    font-size: 130%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#szuro hr {
+    margin: 10px 0;
+}
+
+#szuro label {
+    font-size: 120%;
+    font-family: lolFontBold, sans-serif;
+}
+
+#szuro h3 {
+    font-size: 180%;
+    font-family: lolFontBold, sans-serif;
+}
+
+#szuro input {
+    font-size: 110%;
+    color: #005A82;
+    margin: 5px 0;
+    width: 95%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#szuro select {
+    color: #005A82;
+    height: 40px;
+    font-size: 110%;
+    margin: 5px 0;
+    width: 95%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#szuro select option {
+    border-radius: 10px;
+    font-size: 100%;
+    color: #005A82;
+    padding: 3px;
+} 
+
+#szuro button {
+    width: 150px;
+    background-color: #005A82;
+    color: #F0E6D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 120%;
+    cursor: pointer;
+}
+
+#szuro button:hover {
+    background-color: #F0E6D2;
+    color: #005A82;
+} 
+
+p {
+    font-size: 120%;
+    margin: 0;
+    padding: 0;
 }
